@@ -95,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = fm.beginTransaction();
         if (flag == 0) {
             ft.add(R.id.framelayout, fragment);
-            fm.popBackStack(R.id.home,FragmentManager.POP_BACK_STACK_INCLUSIVE);
+           /* fm.popBackStack(R.id.home,FragmentManager.POP_BACK_STACK_INCLUSIVE);*/
             ft.commit();
         } else {
             ft.replace(R.id.framelayout, fragment);
-            ft.addToBackStack(null);
+            /*ft.addToBackStack(null);*/
             ft.commit();
         }
     }

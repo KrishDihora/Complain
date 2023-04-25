@@ -3,62 +3,94 @@ package com.complain;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class HomeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    ImageView iv_quickcomplain;
+    ImageView iv_complain;
+    ImageView iv_complainstatus;
+    ImageView iv_faq;
+    private FragmentManager supportFragmentManager;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view= inflater.inflate(R.layout.fragment_home, container, false);
+
+        iv_quickcomplain=view.findViewById(R.id.iv_quickcomplain);
+        iv_complain=view.findViewById(R.id.iv_complain);
+        iv_complainstatus=view.findViewById(R.id.iv_complainstatus);
+        iv_faq=view.findViewById(R.id.iv_faq);
+
+       /* iv_quickcomplain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new QuickcomplainFragment(),1);
+            }
+        });
+
+        iv_complain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new ComplainrequestFragment(),1);
+            }
+        });
+
+        iv_complainstatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new ComplainstatusFragment(),1);
+            }
+        });
+
+        iv_faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new FaqFragment(),1);
+            }
+        });
+
+*/
+
+
+        return  view;
     }
+
+   /* public void loadFragment(Fragment fragment, int flag) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        if (flag == 0) {
+            ft.add(R.id.framelayout, fragment);
+            *//*fm.popBackStack(R.id.home,FragmentManager.POP_BACK_STACK_INCLUSIVE);*//*
+            ft.commit();
+        } else {
+            ft.replace(R.id.framelayout, fragment);
+           *//* ft.addToBackStack(null);*//*
+            ft.commit();
+        }
+    }
+
+
+    public FragmentManager getSupportFragmentManager() {
+        return supportFragmentManager;
+    }
+
+    public void setSupportFragmentManager(FragmentManager supportFragmentManager) {
+        this.supportFragmentManager = supportFragmentManager;
+    }*/
 }

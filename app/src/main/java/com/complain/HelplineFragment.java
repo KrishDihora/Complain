@@ -48,15 +48,74 @@ public class HelplineFragment extends Fragment {
        cl_num1.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent sendnumber=new Intent(Intent.ACTION_DIAL);
-               sendnumber.setData(Uri.parse("number:8780111310"));
-               startActivity(sendnumber);
+            Intent intent=new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:1091"));
+            startActivity(intent);
 
 
-               
+
            }
        });
 
+        cl_num2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:1098"));
+                startActivity(intent);
+
+
+
+            }
+        });
+
+        cl_num3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:101"));
+                startActivity(intent);
+
+
+
+            }
+        });
+
+        cl_num4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:100"));
+                startActivity(intent);
+
+
+
+            }
+        });
+
+        cl_num5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:102"));
+                startActivity(intent);
+
+
+
+            }
+        });
+
+        cl_num6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:108"));
+                startActivity(intent);
+
+
+
+            }
+        });
 
 
 

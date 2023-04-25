@@ -3,14 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComplainstatusFragment"
+    tools:context=".FaqFragment"
     android:background="@color/white">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Complain Status"
+        android:text="FAQ"
         android:gravity="center"
         android:textColor="@color/black"/>
-
 </LinearLayout>

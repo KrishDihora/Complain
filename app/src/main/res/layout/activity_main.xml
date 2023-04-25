@@ -92,7 +92,7 @@
         app:itemIconTint="@color/light_black"
         android:layout_marginTop="@dimen/_27sdp"
         android:visibility="visible"
-        android:background="#BFBFBF"
+        android:background="@color/bottom_navigation_grey"
         android:id="@+id/drawernavigation">
 
         <androidx.constraintlayout.widget.ConstraintLayout
