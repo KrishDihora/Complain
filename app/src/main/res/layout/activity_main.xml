@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:id="@+id/drawerlayout">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/white">
+
+       <com.google.android.material.appbar.AppBarLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/appbarlayout"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent">
+
+           <androidx.appcompat.widget.Toolbar
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:background="@color/bottom_navigation_grey"
+               android:id="@+id/toolbar">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Gujarat"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_20sdp"/>
+
+
+               </LinearLayout>
+
+           </androidx.appcompat.widget.Toolbar>
+
+       </com.google.android.material.appbar.AppBarLayout>
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/framelayout"
+           app:layout_constraintTop_toBottomOf="@+id/appbarlayout"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintBottom_toTopOf="@+id/bottomnavigation"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginTop="@dimen/_55sdp">
+       </FrameLayout>
+
+       <com.google.android.material.bottomnavigation.BottomNavigationView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:background="@drawable/bottom_navigation_corner"
+           android:layout_marginStart="@dimen/_10sdp"
+           android:layout_marginEnd="@dimen/_10sdp"
+           android:layout_marginBottom="@dimen/_10sdp"
+           app:itemIconTint="@color/light_black"
+           app:itemTextColor="@color/light_black"
+           app:itemIconSize="@dimen/_20sdp"
+           app:menu="@menu/bottom_navigation"
+           android:id="@+id/bottomnavigation">
+       </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_navigation_header"
+        app:menu="@menu/drawer_navigation"
+        app:itemIconSize="@dimen/_20sdp"
+        app:itemTextColor="@color/light_black"
+        app:itemIconTint="@color/light_black"
+        android:layout_marginTop="@dimen/_27sdp"
+        android:visibility="visible"
+        android:background="#BFBFBF"
+        android:id="@+id/drawernavigation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textColor="@color/light_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_12ssp"
+                android:id="@+id/logout"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/logout"
+                android:background="@color/light_black"
+                android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+
+
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

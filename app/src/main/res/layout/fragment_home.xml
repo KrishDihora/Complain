@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cl_home">
+
+
+          <androidx.cardview.widget.CardView
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/_170sdp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:cardCornerRadius="@dimen/_13sdp"
+              android:layout_marginStart="@dimen/_12sdp"
+              android:layout_marginEnd="@dimen/_12sdp"
+              android:id="@+id/cv_slider">
+
+
+                <ViewFlipper
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:flipInterval="4000"
+                    android:autoStart="true"
+                    android:inAnimation="@android:anim/slide_in_left"
+                    android:outAnimation="@android:anim/slide_out_right">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/banner"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/banner"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/banner"/>
+
+
+                </ViewFlipper>
+
+          </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_45sdp"
+                app:layout_constraintHorizontal_weight="@integer/material_motion_duration_long_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_slider"
+                app:layout_constraintEnd_toStartOf="@+id/cv_complainrequest"
+                android:layout_marginTop="@dimen/_40sdp"
+                app:cardBackgroundColor="@color/bottom_navigation_grey"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp"
+                android:id="@+id/cv_complainstatus">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Complain Status"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"
+                    android:id="@+id/complainstatus"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_45sdp"
+                app:layout_constraintHorizontal_weight="@integer/material_motion_duration_long_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_slider"
+                app:layout_constraintStart_toEndOf="@+id/cv_complainstatus"
+                android:layout_marginTop="@dimen/_40sdp"
+                app:cardBackgroundColor="@color/bottom_navigation_grey"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp"
+                android:id="@+id/cv_complainrequest">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Complain Request"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"
+                    android:id="@+id/complainrequest"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cv_complainstatus"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_6sdp"/>
+
+
+            
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

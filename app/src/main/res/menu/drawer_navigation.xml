@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home"></item>
+
+    <item android:id="@+id/chat"
+        android:title="Chat"
+        android:icon="@drawable/chat"></item>
+
+    <item android:id="@+id/helpline"
+        android:title="Help Line"
+        android:icon="@drawable/helpline"></item>
+
+    <item android:id="@+id/circular"
+        android:title="Circular"
+        android:icon="@drawable/circular"></item>
+
+
+    <item android:id="@+id/complain"
+        android:title="Complain">
+
+        <menu>
+            <item android:id="@+id/complainstatus"
+                android:title="Complain Status"
+                android:icon="@drawable/complain_status"></item>
+
+            <item android:id="@+id/complainrequest"
+                android:title="Complain Request"
+                android:icon="@drawable/complain_request"></item>
+
+        </menu>
+
+    </item>
+
+</menu>
