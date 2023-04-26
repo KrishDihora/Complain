@@ -14,7 +14,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/white"
-        android:id="@+id/cl_signup">
+        android:id="@+id/cl_signup"
+        android:visibility="">
 
 
         <TextView
@@ -32,14 +33,16 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_45sdp"
             app:layout_constraintTop_toBottomOf="@+id/complain"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginEnd="@dimen/_35sdp"
-            android:hint="Username"
+            android:hint="Name"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxStrokeWidth="0dp"
             android:textColorHint="@color/hint_grey"
             android:id="@+id/til_username">
 
@@ -58,7 +61,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_45sdp"
             app:layout_constraintTop_toBottomOf="@+id/til_username"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +69,8 @@
             android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginEnd="@dimen/_35sdp"
             android:hint="Mobile No"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxStrokeWidth="0dp"
             android:textColorHint="@color/hint_grey"
             android:id="@+id/til_mobileno">
 
@@ -84,7 +89,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_45sdp"
             app:layout_constraintTop_toBottomOf="@+id/til_mobileno"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,6 +97,8 @@
             android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginEnd="@dimen/_35sdp"
             android:hint="Password"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxStrokeWidth="0dp"
             android:textColorHint="@color/hint_grey"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/hint_grey"
@@ -112,14 +119,17 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_45sdp"
             app:layout_constraintTop_toBottomOf="@+id/til_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginEnd="@dimen/_35sdp"
-            android:hint="OTP"
+            android:hint="Enter OTP"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxStrokeWidth="0dp"
             android:textColorHint="@color/hint_grey"
             android:id="@+id/til_otp">
 
@@ -173,23 +183,7 @@
 
         </androidx.cardview.widget.CardView>
 
-
-
-
-
-
-
-
-
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

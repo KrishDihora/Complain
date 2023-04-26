@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/complain/app/src/main/res/layout/activity_loginsignup.xml" value="0.27291666666666664" />
         <entry key="..\:/complain/app/src/main/res/layout/activity_quickcomplain.xml" value="0.27291666666666664" />
+        <entry key="..\:/complain/app/src/main/res/layout/fragment_helpline.xml" value="0.27291666666666664" />
         <entry key="..\:/complain/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
         <entry key="..\:/complain/app/src/main/res/menu/bottom_navigation.xml" value="0.27291666666666664" />
         <entry key="..\:/complain/app/src/main/res/menu/drawer_navigation.xml" value="0.27291666666666664" />
