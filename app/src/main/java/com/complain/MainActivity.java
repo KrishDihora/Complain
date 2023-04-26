@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     bottomNavigation.setSelectedItemId(R.id.helpline);
                 } else if (id == R.id.circular) {
                     loadFragment(new CircularFragment(), 1);
-                   // bottomNavigation.setSelectedItemId(R.id.circular);
+                    bottomNavigation.setSelectedItemId(R.id.circular);
                 } else if (id == R.id.complainstatus) {
                     loadFragment(new ComplainstatusFragment(), 1);
                 } else if (id == R.id.complainrequest) {
