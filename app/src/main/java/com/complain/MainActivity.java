@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    
+
     public void loadFragment(Fragment fragment, int flag) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

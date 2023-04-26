@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:background="@color/white"
         android:id="@+id/cl_signup"
-        android:visibility="">
+        android:visibility="visible">
 
 
         <TextView
