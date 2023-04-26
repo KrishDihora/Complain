@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginsignupActivity"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:id="@+id/cl_signup">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:text="Complain"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_50ssp"
+            android:fontFamily="@font/grand_hotel"
+            android:id="@+id/complain"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/complain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:hint="Username"
+            android:textColorHint="@color/hint_grey"
+            android:id="@+id/til_username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/textinputedittext_corner"
+                android:backgroundTint="#E0F6FF"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:id="@+id/tiet_username" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/til_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:hint="Mobile No"
+            android:textColorHint="@color/hint_grey"
+            android:id="@+id/til_mobileno">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/textinputedittext_corner"
+                android:backgroundTint="#E0F6FF"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:id="@+id/tiet_mobileno" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/til_mobileno"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:hint="Password"
+            android:textColorHint="@color/hint_grey"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/hint_grey"
+            android:id="@+id/til_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/textinputedittext_corner"
+                android:backgroundTint="#E0F6FF"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:id="@+id/tiet_password" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/til_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:hint="OTP"
+            android:textColorHint="@color/hint_grey"
+            android:id="@+id/til_otp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/textinputedittext_corner"
+                android:backgroundTint="#E0F6FF"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:id="@+id/tiet_otp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/til_otp"
+            app:layout_constraintEnd_toEndOf="@+id/til_otp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="Forget Password"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/blue"
+            android:id="@+id/forgetpassword"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/forgetpassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardBackgroundColor="@color/blue"
+            android:id="@+id/cv_login">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log In"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:id="@+id/login"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
