@@ -51,12 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if (id == R.id.home) {
                     loadFragment(new HomeFragment(), 1);
+                    bottomNavigation.setSelectedItemId(R.id.home);
                 } else if (id == R.id.chat) {
                     loadFragment(new ChatFragment(), 1);
+                    bottomNavigation.setSelectedItemId(R.id.chat);
                 } else if (id == R.id.helpline) {
                     loadFragment(new HelplineFragment(), 1);
+                    bottomNavigation.setSelectedItemId(R.id.helpline);
                 } else if (id == R.id.circular) {
                     loadFragment(new CircularFragment(), 1);
+                   // bottomNavigation.setSelectedItemId(R.id.circular);
                 } else if (id == R.id.complainstatus) {
                     loadFragment(new ComplainstatusFragment(), 1);
                 } else if (id == R.id.complainrequest) {

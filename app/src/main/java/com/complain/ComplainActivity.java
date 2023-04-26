@@ -28,8 +28,8 @@ public class ComplainActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home=new Intent(ComplainActivity.this,HomeFragment.class);
-                startActivity(home);
+                //Intent home=new Intent(ComplainActivity.this,HomeFragment.class);
+               // startActivity(home);
                 finish();
 
             }

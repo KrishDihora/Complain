@@ -27,8 +27,8 @@ public class QuickcomplainActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home=new Intent(QuickcomplainActivity.this,HomeFragment.class);
-                startActivity(home);
+               // Intent home=new Intent(QuickcomplainActivity.this,HomeFragment.class);
+               // startActivity(home);
                 finish();
 
             }
