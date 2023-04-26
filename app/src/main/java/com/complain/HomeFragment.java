@@ -1,5 +1,6 @@
 package com.complain;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -37,60 +38,48 @@ public class HomeFragment extends Fragment {
         iv_complainstatus=view.findViewById(R.id.iv_complainstatus);
         iv_faq=view.findViewById(R.id.iv_faq);
 
-       /* iv_quickcomplain.setOnClickListener(new View.OnClickListener() {
+        iv_quickcomplain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new QuickcomplainFragment(),1);
+                Intent quickcomplain=new Intent(getContext(),QuickcomplainActivity.class);
+                startActivity(quickcomplain);
+
             }
         });
 
         iv_complain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new ComplainrequestFragment(),1);
+                Intent complain=new Intent(getContext(),ComplainActivity.class);
+                startActivity(complain);
+
             }
         });
 
         iv_complainstatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new ComplainstatusFragment(),1);
+                Intent complainstatus=new Intent(getContext(),ComplainstatusActivity.class);
+                startActivity(complainstatus);
+
             }
         });
 
         iv_faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new FaqFragment(),1);
+                Intent faq=new Intent(getContext(),FaqActivity.class);
+                startActivity(faq);
+
             }
         });
 
-*/
+
+
 
 
         return  view;
     }
 
-   /* public void loadFragment(Fragment fragment, int flag) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        if (flag == 0) {
-            ft.add(R.id.framelayout, fragment);
-            *//*fm.popBackStack(R.id.home,FragmentManager.POP_BACK_STACK_INCLUSIVE);*//*
-            ft.commit();
-        } else {
-            ft.replace(R.id.framelayout, fragment);
-           *//* ft.addToBackStack(null);*//*
-            ft.commit();
-        }
-    }
 
-
-    public FragmentManager getSupportFragmentManager() {
-        return supportFragmentManager;
-    }
-
-    public void setSupportFragmentManager(FragmentManager supportFragmentManager) {
-        this.supportFragmentManager = supportFragmentManager;
-    }*/
 }
