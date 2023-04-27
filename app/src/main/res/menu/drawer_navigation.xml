@@ -14,22 +14,22 @@
         android:title="Help Line"
         android:icon="@drawable/helpline"></item>
 
-    <item android:id="@+id/circular"
-        android:title="Circular"
-        android:icon="@drawable/circular"></item>
+    <item android:id="@+id/notice"
+        android:title="Notice"
+        android:icon="@drawable/notice"></item>
 
 
-    <item android:id="@+id/complain"
-        android:title="Complain">
+    <item
+        android:title="Complain_">
 
         <menu>
             <item android:id="@+id/complainstatus"
                 android:title="Complain Status"
-                android:icon="@drawable/complain_status"></item>
+                android:icon="@drawable/complainstatus_drawer"></item>
 
-            <item android:id="@+id/complainrequest"
-                android:title="Complain Request"
-                android:icon="@drawable/complain_request"></item>
+            <item android:id="@+id/complain"
+                android:title="Complain"
+                android:icon="@drawable/complain_drawer"></item>
 
         </menu>
 

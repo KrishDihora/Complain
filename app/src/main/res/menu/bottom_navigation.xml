@@ -13,9 +13,9 @@
         android:title="Help Line"
         android:icon="@drawable/helpline_selector"></item>
 
-    <item android:id="@+id/circular"
-        android:title="Circular"
-        android:icon="@drawable/circular_selector"></item>
+    <item android:id="@+id/notice"
+        android:title="Notice"
+        android:icon="@drawable/notice_selector"></item>
 
 
 </menu>
