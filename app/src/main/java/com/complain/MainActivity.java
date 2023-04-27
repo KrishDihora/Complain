@@ -10,11 +10,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView drawernavigation;
     BottomNavigationView bottomNavigation;
+    TextView logout;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottomnavigation);
 
         setSupportActionBar(toolbar);
+        logout=findViewById(R.id.logout);
+
+        auth = FirebaseAuth.getInstance();
 
         ActionBarDrawerToggle action = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(action);
@@ -92,9 +101,18 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setSelectedItemId(R.id.home);
 
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                auth.signOut();
+                startActivity(new Intent(MainActivity.this, signupActivity.class));
+                finish();
+            }
+        });
     }
 
-    
+
 
     public void loadFragment(Fragment fragment, int flag) {
         FragmentManager fm = getSupportFragmentManager();
@@ -118,4 +136,5 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+
 }
