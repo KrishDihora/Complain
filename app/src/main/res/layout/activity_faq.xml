@@ -48,6 +48,25 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-   
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/appbarlayout"
+       android:layout_marginTop="@dimen/_40sdp"
+       android:padding="@dimen/_5sdp"
+       android:text="1) What is Smart Bhavnager Application?\n
+ans:- Smart Bhavnager is a mobile-based citizen   application,allowing Citizens of Bhavnager to access enormous public services like make a complaint regarding any Street Light or Electricity issues.\n
+\n\n\
+2) Who can use Smart Bhavnager Application?\n
+ans:- All citizens of Bhavnager city can use Smart Bhavnager Application for accessing a range of public service that allow them to save their huge time.\n
+\n\n
+3) How does this app work?\n
+ans:- Under this application,you can see different icons on which you need to click as per the requirement.After clicking on the main icon,you can get the required information like know AQI,register complaints,etc and use the particular service.\n
+
+"
+       android:textSize="@dimen/_15sdp"
+       android:textColor="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

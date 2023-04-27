@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId "com.complain"
         minSdk 21
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -46,6 +46,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation "androidx.browser:browser:1.4.0"
+    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.1.2'
+
 
 }
 

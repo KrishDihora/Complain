@@ -2,16 +2,23 @@ package com.complain;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class ComplainstatusActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     ImageView back;
+    RecyclerView rv_status;
+
+    ArrayList<StatusModel> arr_statusdetail=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,9 @@ public class ComplainstatusActivity extends AppCompatActivity {
         /*define id*/
         toolbar=findViewById(R.id.toolbar);
         back=findViewById(R.id.back);
+        rv_status=findViewById(R.id.rv_status);
+
+
         /*activate toolbar*/
         setSupportActionBar(toolbar);
 
@@ -34,6 +44,18 @@ public class ComplainstatusActivity extends AppCompatActivity {
 
             }
         });
+
+        rv_status.setLayoutManager(new LinearLayoutManager(this));
+
+        arr_statusdetail.add(new StatusModel("Streetlight Problem","27-4-2023","Pending"));
+        arr_statusdetail.add(new StatusModel("Bulb Problem","27-4-2023","Pending"));
+
+        RecyclerStatusAdapter adapter=new RecyclerStatusAdapter(ComplainstatusActivity.this,arr_statusdetail);
+        rv_status.setAdapter(adapter);
+
+
+
+
     }
 
     /*backed pressed method*/
