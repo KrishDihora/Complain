@@ -39,7 +39,7 @@ public class signupActivity extends AppCompatActivity {
     TextInputEditText verificationcode;
     TextInputEditText otp;
     TextInputLayout l1;
-    TextView tvsignup;
+    TextView tvsignup,gotosign;
     CardView btnlogin,btnsignup;
     FirebaseAuth mauth;
     private int count=1;
@@ -61,6 +61,7 @@ public class signupActivity extends AppCompatActivity {
         l1=findViewById(R.id.til_otp);
         tvsignup=findViewById(R.id.signup);
         progressBar=findViewById(R.id.progress);
+        gotosign= (TextView) findViewById(R.id.signin);
 
         //initializing firebase
         FirebaseApp.initializeApp(this);
@@ -110,7 +111,13 @@ public class signupActivity extends AppCompatActivity {
         });
 
 
-
+        gotosign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(signupActivity.this,signin.class));
+                finish();
+            }
+        });
 
 
 
