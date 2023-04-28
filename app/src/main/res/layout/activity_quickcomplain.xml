@@ -167,7 +167,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+   <!-- <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
         app:layout_constraintTop_toBottomOf="@+id/cv_address"
@@ -193,12 +193,12 @@
             android:textSize="@dimen/_12sdp"
             android:id="@+id/landmark"/>
 
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        app:layout_constraintTop_toBottomOf="@+id/cv_landmark"
+        android:layout_height="@dimen/_90sdp"
+        app:layout_constraintTop_toBottomOf="@+id/cv_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_13sdp"
@@ -231,7 +231,8 @@
         app:layout_constraintEnd_toEndOf="@+id/cv_remark"
         android:layout_marginTop="@dimen/_15sdp"
         app:cardCornerRadius="@dimen/_15sdp"
-        app:cardBackgroundColor="@color/blue">
+        app:cardBackgroundColor="@color/blue"
+        android:id="@+id/btnsunmit">
 
         <TextView
             android:layout_width="match_parent"

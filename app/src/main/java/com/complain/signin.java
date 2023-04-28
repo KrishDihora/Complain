@@ -46,11 +46,12 @@ public class signin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        monumber=findViewById(R.id.tiet_mobileno);
+        monumber=findViewById(R.id.tiet_number);
         vcode=findViewById(R.id.tiet_vcode);
         btnsignin=findViewById(R.id.cv_login);
         txtsignin= (TextView) findViewById(R.id.login);
         progressBar=findViewById(R.id.progress);
+        gotosignup=findViewById(R.id.signup1);
 
 
         FirebaseApp.initializeApp(this);
@@ -195,7 +196,7 @@ public class signin extends AppCompatActivity {
         });
     }
 
-    @Override
+   @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
