@@ -8,6 +8,7 @@
 
     <item android:id="@+id/chat"
         android:title="Chat"
+        android:visible="false"
         android:icon="@drawable/chat"></item>
 
     <item android:id="@+id/helpline"
