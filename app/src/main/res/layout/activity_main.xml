@@ -44,7 +44,8 @@
                        android:text="Smart Bhavnagar"
                        android:fontFamily="@font/grand_hotel"
                        android:textColor="@color/black"
-                       android:textSize="@dimen/_20sdp"/>
+                       android:textSize="@dimen/_20sdp"
+                       android:layout_marginEnd="@dimen/_45sdp"/>
 
 
                </LinearLayout>

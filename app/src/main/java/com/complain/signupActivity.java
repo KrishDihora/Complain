@@ -57,7 +57,7 @@ public class signupActivity extends AppCompatActivity {
         verificationcode =findViewById(R.id.tiet_otp);
         otp=findViewById(R.id.tiet_otp);
         btnsignup= findViewById(R.id.cv_signup);
-        btnlogin =findViewById(R.id.cv_login);
+        btnlogin =findViewById(R.id.cv_signup);
         l1=findViewById(R.id.til_otp);
         tvsignup=findViewById(R.id.signup);
         progressBar=findViewById(R.id.progress);

@@ -17,6 +17,8 @@ import java.net.URI;
 
 public class HelplineFragment extends Fragment {
 
+    ConstraintLayout cl_num0;
+
     ConstraintLayout cl_num1;
     ConstraintLayout cl_num2;
     ConstraintLayout cl_num3;
@@ -37,12 +39,25 @@ public class HelplineFragment extends Fragment {
         // Inflate the layout for this fragment
        View view=inflater.inflate(R.layout.fragment_helpline, container, false);
 
+        cl_num0=view.findViewById(R.id.cl_num0);
        cl_num1=view.findViewById(R.id.cl_num1);
         cl_num2=view.findViewById(R.id.cl_num2);
         cl_num3=view.findViewById(R.id.cl_num3);
         cl_num4=view.findViewById(R.id.cl_num4);
         cl_num5=view.findViewById(R.id.cl_num5);
         cl_num6=view.findViewById(R.id.cl_num6);
+
+        cl_num0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:0278-2514812"));
+                startActivity(intent);
+
+
+
+            }
+        });
 
 
        cl_num1.setOnClickListener(new View.OnClickListener() {

@@ -48,25 +48,103 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/appbarlayout"
-       android:layout_marginTop="@dimen/_40sdp"
-       android:padding="@dimen/_5sdp"
-       android:text="1) What is Smart Bhavnager Application?\n
-ans:- Smart Bhavnager is a mobile-based citizen   application,allowing Citizens of Bhavnager to access enormous public services like make a complaint regarding any Street Light or Electricity issues.\n
-\n\n\
-2) Who can use Smart Bhavnager Application?\n
-ans:- All citizens of Bhavnager city can use Smart Bhavnager Application for accessing a range of public service that allow them to save their huge time.\n
-\n\n
-3) How does this app work?\n
-ans:- Under this application,you can see different icons on which you need to click as per the requirement.After clicking on the main icon,you can get the required information like know AQI,register complaints,etc and use the particular service.\n
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="1) What is Smart Bhavnager Application?"
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:id="@+id/q1"/>
 
-"
-       android:textSize="@dimen/_15sdp"
-       android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/q1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="Smart Bhavnager is a mobile-based citizen   application,allowing Citizens of Bhavnager to access enormous public services like make a complaint regarding any Street Light or Electricity issues."
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/grey"
+        android:id="@+id/ans1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/ans1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/black"
+        android:id="@+id/view1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="2)Who use Smart Bhavnager Application?"
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:id="@+id/q2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/q2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="All citizens of Bhavnager city can use Smart Bhavnager Application for accessing a range of public service that allow them to save their huge time."
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/grey"
+        android:id="@+id/ans2"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/ans2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/black"
+        android:id="@+id/view2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="3) How does this app work?"
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:id="@+id/q3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/q3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="Under this application,you can see different icons on which you need to click as per the requirement.After clicking on the main icon,you can get the required information like know AQI,register complaints,etc and use the particular service."
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/grey"
+        android:id="@+id/ans3"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
