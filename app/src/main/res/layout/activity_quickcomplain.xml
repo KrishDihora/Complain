@@ -78,8 +78,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/spinner_complaintype"
-            />
+            android:id="@+id/spinner_complaintype1"/>
 
     </androidx.cardview.widget.CardView>
 

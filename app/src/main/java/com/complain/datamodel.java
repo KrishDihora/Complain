@@ -2,7 +2,16 @@ package com.complain;
 
 public class datamodel {
 
-    String ctype,name,number,address,landmard,remark;
+   public String ctype,name,number,address,remark;
+
+
+    public datamodel(String name, String number, String address, String remark) {
+        this.ctype = ctype;
+        this.name = name;
+        this.number = number;
+        this.address = address;
+        this.remark = remark;
+    }
 
     public String getCtype() {
         return ctype;
@@ -36,28 +45,11 @@ public class datamodel {
         this.address = address;
     }
 
-    public String getLandmard() {
-        return landmard;
-    }
-
-    public void setLandmard(String landmard) {
-        this.landmard = landmard;
-    }
-
     public String getRemark() {
         return remark;
     }
 
     public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public datamodel(String ctype, String name, String number, String address, String landmard, String remark) {
-        this.ctype = ctype;
-        this.name = name;
-        this.number = number;
-        this.address = address;
-        this.landmard = landmard;
         this.remark = remark;
     }
 }
