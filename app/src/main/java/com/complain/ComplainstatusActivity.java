@@ -48,7 +48,7 @@ public class ComplainstatusActivity extends AppCompatActivity {
         rv_status.setLayoutManager(new LinearLayoutManager(this));
 
         arr_statusdetail.add(new StatusModel("Streetlight Problem","27-4-2023","Pending"));
-        arr_statusdetail.add(new StatusModel("Bulb Problem","27-4-2023","Pending"));
+        arr_statusdetail.add(new StatusModel("Bulb Problem","27-4-2023","Under Process"));
 
         RecyclerStatusAdapter adapter=new RecyclerStatusAdapter(ComplainstatusActivity.this,arr_statusdetail);
         rv_status.setAdapter(adapter);
