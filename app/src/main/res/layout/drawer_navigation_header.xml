@@ -10,8 +10,7 @@
         android:layout_height="@dimen/_170sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/electricitycomplain"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 
