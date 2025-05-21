@@ -5,18 +5,19 @@
         android:title="Home"
         android:icon="@drawable/home_selector"></item>
 
-    <item android:id="@+id/chat"
+    <!--<item android:id="@+id/chat"
         android:title="Chat"
         android:icon="@drawable/chat_selector"
-        android:visible="false"></item>
+        android:visible="false"></item>-->
 
     <item android:id="@+id/helpline"
         android:title="Help Line"
         android:icon="@drawable/helpline_selector"></item>
 
-    <item android:id="@+id/notice"
+    <!--<item android:id="@+id/notice"
         android:title="Notice"
-        android:icon="@drawable/notice_selector"></item>
+        android:visible="false"
+        android:icon="@drawable/notice_selector"></item>-->
 
 
 </menu>

@@ -1,44 +1,27 @@
 {
   "project_info": {
-    "project_number": "999528817209",
-    "project_id": "smart-bhavnagar",
-    "storage_bucket": "smart-bhavnagar.appspot.com"
+    "project_number": "997719625865",
+    "firebase_url": "https://complain-16-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "complain-16",
+    "storage_bucket": "complain-16.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:999528817209:android:bb1c86dd53ecb726d1e3e8",
+        "mobilesdk_app_id": "1:997719625865:android:c54c4be8b06d56fe743658",
         "android_client_info": {
           "package_name": "com.complain"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "999528817209-mh7ct2pad70uf3tji70l97d9sk1h6nno.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.complain",
-            "certificate_hash": "eb291fe6f496e53314639b75f9b918de61a7431a"
-          }
-        },
-        {
-          "client_id": "999528817209-2rdmguef6qe291hnd159tmqk1532n52r.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBBwAwzczMCwRJNOOCSIJyePYh5DMDjKVM"
+          "current_key": "AIzaSyB6FJwordtKyJEsNZgje886vlO-Mh-n56o"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "999528817209-2rdmguef6qe291hnd159tmqk1532n52r.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

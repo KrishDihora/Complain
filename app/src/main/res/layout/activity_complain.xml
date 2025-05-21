@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComplainActivity"
+    tools:context=".Views.Activitys.ComplainActivity"
     android:background="@color/white">
 
 
@@ -28,19 +29,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_23sdp"
-                    android:layout_height="@dimen/_23sdp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:background="@drawable/back"
                     android:backgroundTint="@color/black"
-                    android:id="@+id/back"/>
+                    android:id="@+id/back"
+                    android:layout_marginTop="@dimen/_2sdp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Complain"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_18sdp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/_15sdp"/>
+                    android:layout_marginStart="@dimen/_15sdp" />
 
             </LinearLayout>
 
@@ -79,7 +80,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spinner_complaintype"
-            android:background="@color/white"/>
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -106,7 +108,7 @@
             android:hint="Full name"
             android:textColorHint="@color/hint_grey"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp"
             android:id="@+id/fullname"/>
 
     </androidx.cardview.widget.CardView>
@@ -135,14 +137,15 @@
             android:textColorHint="@color/hint_grey"
             android:inputType="number"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp"
+            android:maxLength="10"
             android:id="@+id/mobileno"/>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_height="@dimen/_60sdp"
         app:layout_constraintTop_toBottomOf="@+id/cv_mobileno"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -163,12 +166,12 @@
             android:hint="Address"
             android:textColorHint="@color/hint_grey"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp"
             android:id="@+id/address"/>
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    <!--<androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
         app:layout_constraintTop_toBottomOf="@+id/cv_address"
@@ -194,12 +197,12 @@
             android:textSize="@dimen/_12sdp"
             android:id="@+id/landmark"/>
 
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        app:layout_constraintTop_toBottomOf="@+id/cv_landmark"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintTop_toBottomOf="@+id/cv_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_13sdp"
@@ -219,12 +222,13 @@
             android:hint="Remark"
             android:textColorHint="@color/hint_grey"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp"
             android:id="@+id/remark"/>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/btnsunmit"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_40sdp"
         app:layout_constraintTop_toBottomOf="@+id/cv_remark"

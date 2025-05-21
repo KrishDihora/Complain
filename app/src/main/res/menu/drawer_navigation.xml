@@ -6,21 +6,32 @@
         android:icon="@drawable/home"
         android:title="Home"></item>
 
-    <item android:id="@+id/chat"
+    <!--<item android:id="@+id/chat"
         android:title="Chat"
         android:visible="false"
-        android:icon="@drawable/chat"></item>
+        android:icon="@drawable/chat"></item>-->
 
     <item android:id="@+id/helpline"
         android:title="Help Line"
         android:icon="@drawable/helpline"></item>
 
-    <item android:id="@+id/notice"
+    <!--<item android:id="@+id/notice"
         android:title="Notice"
+        android:visible="false"
         android:icon="@drawable/notice"></item>
+-->
+    <item android:id="@+id/complainstatus"
+        android:title="Complain Status"
+        android:icon="@drawable/complainstatus_drawer"></item>
+
+    <item android:id="@+id/complain"
+        android:title="Complain"
+        android:icon="@drawable/complain_drawer"></item>
 
 
-    <item
+
+
+    <!--<item
         android:title="Complain">
 
         <menu>
@@ -34,6 +45,6 @@
 
         </menu>
 
-    </item>
+    </item>-->
 
 </menu>
