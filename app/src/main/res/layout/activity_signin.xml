@@ -59,7 +59,7 @@
                     android:background="@drawable/textinputedittext_corner"
                     android:backgroundTint="#E0F6FF"
                     android:inputType="phone"
-                    android:maxLength="10"
+                    android:maxLength="12"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:paddingStart="@dimen/_20sdp"
@@ -77,13 +77,13 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
-                android:hint="Password"
+                android:hint="Verification Code"
                 app:endIconTint="@color/hint_grey"
                 android:textColorHint="@color/hint_grey"
                 app:endIconMode="password_toggle"
                 app:boxStrokeWidthFocused="0dp"
                 app:boxStrokeWidth="0dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:id="@+id/til_vcode">
 
                 <com.google.android.material.textfield.TextInputEditText

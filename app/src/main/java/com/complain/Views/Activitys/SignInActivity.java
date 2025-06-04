@@ -38,12 +38,12 @@ import java.util.concurrent.TimeUnit;
 
 public class SignInActivity extends AppCompatActivity {
 
-    TextInputEditText monumber,vcode;
+    TextInputEditText monumber,enteredOTP;
     CardView btnsignin;
     TextView txtsignin,gotosignup;
     private FirebaseAuth mauth;
     int count=1;
-    String verificationId;
+    String verificationCode;
     ProgressBar progressBar;
     TextInputLayout l1;
     ConstraintLayout clmain;
@@ -57,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         monumber=findViewById(R.id.tiet_number);
-        vcode=findViewById(R.id.tiet_vcode);
+        enteredOTP=findViewById(R.id.tiet_vcode);
         btnsignin=findViewById(R.id.cv_login);
         txtsignin= (TextView) findViewById(R.id.login);
         progressBar=findViewById(R.id.progress);
@@ -73,8 +73,8 @@ public class SignInActivity extends AppCompatActivity {
         // Force reCAPTCHA for testing
         /*FirebaseAuth.getInstance().getFirebaseAuthSettings()
                 .forceRecaptchaFlowForTesting(true);*/
-        FirebaseAuth.getInstance().getFirebaseAuthSettings()
-                .setAppVerificationDisabledForTesting(true);
+        /*FirebaseAuth.getInstance().getFirebaseAuthSettings()
+                .setAppVerificationDisabledForTesting(true);*/
 
         //Local Database
         userPreference = getSharedPreferences("user",MODE_PRIVATE);
@@ -95,42 +95,46 @@ public class SignInActivity extends AppCompatActivity {
                         clmain.setAlpha(1f);
                         progressBar.setVisibility(View.GONE);
 
-                    } else if (vcode.getText().toString().isEmpty()) {
+                    } /*else if (enteredOTP.getText().toString().isEmpty()) {
                         Toast.makeText(SignInActivity.this, "Please Enter Verification Code", Toast.LENGTH_SHORT).show();
                         clmain.setAlpha(1f);
                         progressBar.setVisibility(View.GONE);
 
-                    } else {
+                    }*/ else {
                         clmain.setAlpha(0.2f);
                         progressBar.setVisibility(View.VISIBLE);
-                        String phoneNumber=monumber.getText().toString();
-                        String verificationCode =vcode.getText().toString();
-                        //l1.setVisibility(View.VISIBLE);
-                        //txtsignin.setText("Submit OTP");
-                        //count = 0;
-                        //sendveryficationcode(number,code);
 
-                        userEditor.putString("phoneNumber",phoneNumber);
-                        userEditor.putString("password",verificationCode);
+                        String phoneNumber=monumber.getText().toString();
+                        //String verificationCode =vcode.getText().toString();
+
+                        l1.setVisibility(View.VISIBLE);
+                        txtsignin.setText("Submit OTP");
+                        count = 0;
+
+                        sendveryficationcode("+91 " + phoneNumber);
+
+                        /*userEditor.putString("phoneNumber",phoneNumber);
+                        userEditor.
+                        putString("password",verificationCode);
                         userEditor.commit();
 
                         startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                        finish();
+                        finish();*/
 
                     }
 
                 }
-                /*else
+                else
                 {
-                    if (vcode.getText().toString().isEmpty())
+                    if (enteredOTP.getText().toString().isEmpty())
                     {
                         Toast.makeText(SignInActivity.this, "Please Enter OTP", Toast.LENGTH_SHORT).show();
                     }else {
-                        verifycode(vcode.getText().toString());
+                        verifycode(enteredOTP.getText().toString());
                     }
 
 
-                }*/
+                }
 
             }
         });
@@ -145,12 +149,11 @@ public class SignInActivity extends AppCompatActivity {
     }
 
 
-    private void sendveryficationcode(String number,String code)
+    private void sendveryficationcode(String number)
     {
-        mauth.getFirebaseAuthSettings().setAutoRetrievedSmsCodeForPhoneNumber("+91"+number,code);
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mauth)
-                        .setPhoneNumber("+91"+number)
+                        .setPhoneNumber(number)
                         .setTimeout(60L, TimeUnit.SECONDS)
                         .setActivity(this)
                         .setCallbacks(testCallbacks)
@@ -165,21 +168,19 @@ public class SignInActivity extends AppCompatActivity {
 
                 @Override
                 public void onVerificationCompleted(@NonNull PhoneAuthCredential credential) {
-                    String code = credential.getSmsCode();
-                    if (code != null) {
-                        Log.d("verificationId",code);
-                        //vcode.setText(code);
-                        verifycode(code);
-                    }
+                    signinbycredential(credential);
                 }
 
                 @Override
                 public void onVerificationFailed(@NonNull FirebaseException e) {
                     Toast.makeText(SignInActivity.this, "Verification failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                    Log.d("onVerificationFailed", "Verification failed: " + e.getMessage());
+
                     clmain.setAlpha(1f);
                     progressBar.setVisibility(View.GONE);
-                    //l1.setVisibility(View.GONE);
+
+                    l1.setVisibility(View.GONE);
+                    txtsignin.setText("Sign In");
+
                     count = 1;
 
                 }
@@ -187,73 +188,20 @@ public class SignInActivity extends AppCompatActivity {
                 @Override
                 public void onCodeSent(@NonNull String id, @NonNull PhoneAuthProvider.ForceResendingToken token) {
                     super.onCodeSent(id, token);
-                    verificationId = id;
-                    Log.d("verificationId",id);
+                    verificationCode = id;
+
+                    Toast.makeText(SignInActivity.this, "OTP has been sent", Toast.LENGTH_LONG).show();
+
                     clmain.setAlpha(1f);
                     progressBar.setVisibility(View.GONE);
                 }
             };
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks()
+    private void verifycode(String enteredOTP)
     {
-
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential credential)
-        {
-
-            final String code=credential.getSmsCode();
-            if (code!=null)
-            {
-                verifycode(code);
-            }
-
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e)
-        {
-
-            Log.w(TAG, "onVerificationFailed", e);
-
-            Toast.makeText(SignInActivity.this, "Verification failed. Please Try Again.", Toast.LENGTH_SHORT).show();
-            clmain.setAlpha(1f);
-            progressBar.setVisibility(View.GONE);
-            l1.setVisibility(View.GONE);
-            txtsignin.setText("Get Verification Code");
-            count = 1;
-
-            if (e instanceof FirebaseAuthInvalidCredentialsException)
-            {
-                Toast.makeText(SignInActivity.this, "Invalid Detail Try Again After few Minutes.", Toast.LENGTH_LONG).show();
-            }
-            else if (e instanceof FirebaseTooManyRequestsException)
-            {
-                Toast.makeText(SignInActivity.this, "To many Try. Try Again After few Minutes.", Toast.LENGTH_LONG).show();            }
-            else if (e instanceof FirebaseAuthMissingActivityForRecaptchaException)
-            {
-                Toast.makeText(SignInActivity.this, "Please Try Again After few Minutes.", Toast.LENGTH_LONG).show();
-            }
-
-
-
-        }
-
-        @Override
-        public void onCodeSent(@NonNull String verifId, @NonNull PhoneAuthProvider.ForceResendingToken token)
-        {
-            super.onCodeSent(verifId,token);
-            verificationId=verifId;
-            clmain.setAlpha(1f);
-            progressBar.setVisibility(View.GONE);
-            Toast.makeText(SignInActivity.this, "SMS has been sent ", Toast.LENGTH_SHORT).show();
-        }
-    };
-
-    private void verifycode(String vcode)
-    {
-        Log.d("verificationId",vcode);
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId,vcode);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode,enteredOTP);
         signinbycredential(credential);
+
         clmain.setAlpha(0.2f);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -266,15 +214,20 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task)
             {
-                if (task.isComplete())
+                if (task.isSuccessful())
                 {
                     Toast.makeText(SignInActivity.this, "Sign-in Success", Toast.LENGTH_SHORT).show();
+
                     startActivity(new Intent(SignInActivity.this, MainActivity.class));
                     finish();
+
                     clmain.setAlpha(1f);
                     progressBar.setVisibility(View.GONE);
                 } else {
-                    Toast.makeText(SignInActivity.this, "Sign-in Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
+
+                    clmain.setAlpha(1f);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });
@@ -283,11 +236,11 @@ public class SignInActivity extends AppCompatActivity {
    @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        /*FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser!=null)
         {
             startActivity(new Intent(SignInActivity.this,MainActivity.class));
-        }
+        }*/
     }
 }

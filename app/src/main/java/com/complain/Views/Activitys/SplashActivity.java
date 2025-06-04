@@ -12,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.complain.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SplashActivity extends AppCompatActivity {
     SharedPreferences userPreference;
@@ -31,7 +33,18 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (userPreference.getAll().size()>0){
+                /*if (userPreference.getAll().size()>0){
+                    startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                    finish();
+                }else {
+                    startActivity(new Intent(SplashActivity.this,SignInActivity.class));
+                    finish();
+                }*/
+
+                FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+
+                if (firebaseUser!=null)
+                {
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
                     finish();
                 }else {

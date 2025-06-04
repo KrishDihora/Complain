@@ -105,8 +105,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 auth.signOut();
-                userEditor.clear();
-                userEditor.commit();
+
+                /*userEditor.clear();
+                userEditor.commit();*/
+
                 startActivity(new Intent(MainActivity.this, SignInActivity.class));
                 finish();
             }

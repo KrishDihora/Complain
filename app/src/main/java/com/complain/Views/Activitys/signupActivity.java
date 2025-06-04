@@ -40,13 +40,13 @@ public class signupActivity extends AppCompatActivity {
 
     TextInputEditText name,number;
     TextInputEditText verificationcode;
-    TextInputEditText otp;
+    TextInputEditText enteredOTP;
     TextInputLayout l1;
     TextView tvsignup,gotosign;
     CardView btnsignup;
     FirebaseAuth mauth;
     private int count=1;
-    String verificationId;
+    String verificationCode;
     ProgressBar progressBar;
     ConstraintLayout  cl_login,cl_logout,clmain;
     String testPhoneNumber = "9999999999";
@@ -63,7 +63,7 @@ public class signupActivity extends AppCompatActivity {
         name=findViewById(R.id.tiet_name);
         number=findViewById(R.id.tiet_mobileno);
         verificationcode =findViewById(R.id.tiet_otp);
-        otp=findViewById(R.id.tiet_otp);
+        enteredOTP=findViewById(R.id.tiet_otp);
         btnsignup= findViewById(R.id.cv_signup);
         l1=findViewById(R.id.til_otp);
         tvsignup=findViewById(R.id.signup);
@@ -78,8 +78,8 @@ public class signupActivity extends AppCompatActivity {
         // Force reCAPTCHA for testing
         /*FirebaseAuth.getInstance().getFirebaseAuthSettings()
                 .forceRecaptchaFlowForTesting(true);*/
-        FirebaseAuth.getInstance().getFirebaseAuthSettings()
-                .setAppVerificationDisabledForTesting(true);
+        /*FirebaseAuth.getInstance().getFirebaseAuthSettings()
+                .setAppVerificationDisabledForTesting(true);*/
 
         //Local Database
         userPreference = getSharedPreferences("user",MODE_PRIVATE);
@@ -105,39 +105,42 @@ public class signupActivity extends AppCompatActivity {
                         clmain.setAlpha(1f);
                         progressBar.setVisibility(View.GONE);
 
-                    }else if (otp.getText().toString().isEmpty()) {
+                    }/*else if (enteredOTP.getText().toString().isEmpty()) {
                         Toast.makeText(signupActivity.this, "Please Enter OTP", Toast.LENGTH_SHORT).show();
                         clmain.setAlpha(1f);
                         progressBar.setVisibility(View.GONE);
 
-                    } else {
+                    }*/ else {
                         clmain.setAlpha(0.2f);
                         progressBar.setVisibility(View.VISIBLE);
-                        String phoneNumber=number.getText().toString();
-                        String verificationCode=otp.getText().toString();
-                        //l1.setVisibility(View.VISIBLE);
-                        //tvsignup.setText("Submit OTP");
-                        //count = 0;
-                        //sendveryficationcode(monumber,code);
 
-                        userEditor.putString("phoneNumber",phoneNumber);
+                        String phoneNumber=number.getText().toString();
+                        //String verificationCode=enteredOTP.getText().toString();
+
+                        l1.setVisibility(View.VISIBLE);
+                        tvsignup.setText("Submit OTP");
+                        count = 0;
+
+                        sendveryficationcode("+91 " + phoneNumber);
+
+                        /*userEditor.putString("phoneNumber",phoneNumber);
                         userEditor.putString("password",verificationCode);
                         userEditor.commit();
 
                         startActivity(new Intent(signupActivity.this, MainActivity.class));
-                        finish();
+                        finish();*/
 
                     }
 
                 }
                 else
                 {
-                    /*if (otp.getText().toString().isEmpty())
+                    if (enteredOTP.getText().toString().isEmpty())
                     {
                         Toast.makeText(signupActivity.this, "Please Enter OTP", Toast.LENGTH_SHORT).show();
                     }else {
-                        verifycode(otp.getText().toString());
-                    }*/
+                        verifycode(enteredOTP.getText().toString());
+                    }
 
 
                 }
@@ -157,12 +160,11 @@ public class signupActivity extends AppCompatActivity {
 
     }
 
-    private void sendveryficationcode(String number,String code)
+    private void sendveryficationcode(String number)
     {
-        mauth.getFirebaseAuthSettings().setAutoRetrievedSmsCodeForPhoneNumber("+91"+number,code);
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mauth)
-                        .setPhoneNumber("+91"+number)
+                        .setPhoneNumber(number)
                         .setTimeout(60L, TimeUnit.SECONDS)
                         .setActivity(this)
                         .setCallbacks(testCallbacks)
@@ -177,20 +179,19 @@ public class signupActivity extends AppCompatActivity {
 
                 @Override
                 public void onVerificationCompleted(@NonNull PhoneAuthCredential credential) {
-                    String code = credential.getSmsCode();
-                    if (code != null) {
-                        otp.setText(code);
-                        verifycode(code);
-                    }
+                    signinbycredential(credential);
                 }
 
                 @Override
                 public void onVerificationFailed(@NonNull FirebaseException e) {
                     Toast.makeText(signupActivity.this, "Verification failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                    Log.d("onVerificationFailed", "Verification failed: " + e.getMessage());
+
                     clmain.setAlpha(1f);
                     progressBar.setVisibility(View.GONE);
-                    //l1.setVisibility(View.GONE);
+
+                    l1.setVisibility(View.GONE);
+                    tvsignup.setText("Sign Up");
+
                     count = 1;
 
                 }
@@ -198,76 +199,22 @@ public class signupActivity extends AppCompatActivity {
                 @Override
                 public void onCodeSent(@NonNull String id, @NonNull PhoneAuthProvider.ForceResendingToken token) {
                     super.onCodeSent(id, token);
-                    verificationId = id;
-                    Log.d("verificationId",id);
+                    verificationCode = id;
+
+                    Toast.makeText(signupActivity.this, "OTP has been sent", Toast.LENGTH_LONG).show();
+
                     clmain.setAlpha(1f);
                     progressBar.setVisibility(View.GONE);
 
                 }
             };
 
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks()
+    private void verifycode(String enteredOTP)
     {
 
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential credential)
-        {
-
-            final String code=otp.getText().toString();
-            if (code!=null)
-            {
-                verifycode(code);
-            }
-
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e)
-        {
-
-            Log.w("TAG", "onVerificationFailed", e);
-            Log.d("Failed", e.toString());
-
-            Toast.makeText(signupActivity.this, "Verification failed. Please Try Again.", Toast.LENGTH_SHORT).show();
-            clmain.setAlpha(1f);
-            progressBar.setVisibility(View.GONE);
-            l1.setVisibility(View.GONE);
-            tvsignup.setText("Sign Up");
-            count = 1;
-
-            if (e instanceof FirebaseAuthInvalidCredentialsException)
-            {
-                Toast.makeText(signupActivity.this, "Invalid Detail Try Again After few Minutes.", Toast.LENGTH_LONG).show();
-            }
-            else if (e instanceof FirebaseTooManyRequestsException)
-            {
-                Toast.makeText(signupActivity.this, "To many Try. Try Again After few Minutes.", Toast.LENGTH_LONG).show();            }
-            else if (e instanceof FirebaseAuthMissingActivityForRecaptchaException)
-            {
-                Toast.makeText(signupActivity.this, "Please Try Again After few Minutes.", Toast.LENGTH_LONG).show();
-            }
-
-
-
-        }
-
-        @Override
-        public void onCodeSent(@NonNull String verifId, @NonNull PhoneAuthProvider.ForceResendingToken token)
-        {
-            super.onCodeSent(verifId,token);
-            verificationId=verifId;
-            clmain.setAlpha(1f);
-            progressBar.setVisibility(View.GONE);
-            Toast.makeText(signupActivity.this, "SMS has been sent ", Toast.LENGTH_SHORT).show();
-        }
-    };
-
-    private void verifycode(String vcode)
-    {
-
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId,vcode);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode,enteredOTP);
         signinbycredential(credential);
+
         clmain.setAlpha(0.2f);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -280,15 +227,20 @@ public class signupActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task)
             {
-                if (task.isComplete())
+                if (task.isSuccessful())
                 {
                     Toast.makeText(signupActivity.this, "Sign-in Success", Toast.LENGTH_SHORT).show();
+
                     startActivity(new Intent(signupActivity.this, MainActivity.class));
                     finish();
+
                     clmain.setAlpha(1f);
                     progressBar.setVisibility(View.GONE);
                 } else {
-                    Toast.makeText(signupActivity.this, "Sign-in Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(signupActivity.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
+
+                    clmain.setAlpha(1f);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });
@@ -297,11 +249,11 @@ public class signupActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        /*FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser!=null)
         {
             startActivity(new Intent(signupActivity.this,MainActivity.class));
-        }
+        }*/
     }
 }
