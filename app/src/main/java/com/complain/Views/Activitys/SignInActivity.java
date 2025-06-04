@@ -71,10 +71,10 @@ public class SignInActivity extends AppCompatActivity {
         mauth= FirebaseAuth.getInstance();
 
         // Force reCAPTCHA for testing
-        /*FirebaseAuth.getInstance().getFirebaseAuthSettings()
-                .forceRecaptchaFlowForTesting(true);*/
-        /*FirebaseAuth.getInstance().getFirebaseAuthSettings()
-                .setAppVerificationDisabledForTesting(true);*/
+        FirebaseAuth.getInstance().getFirebaseAuthSettings()
+                .forceRecaptchaFlowForTesting(true);
+        FirebaseAuth.getInstance().getFirebaseAuthSettings()
+                .setAppVerificationDisabledForTesting(true);
 
         //Local Database
         userPreference = getSharedPreferences("user",MODE_PRIVATE);
