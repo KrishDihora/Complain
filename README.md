@@ -5,6 +5,6 @@ Built using Java with Firebase Realtime Database integration for handling compla
 
 The first version of this application has also been released - feel free to check it out.
 
-Sign In credentials are below:
+Sign In credentials is
   MobileNumber: 99999 99991
   VerificationCode: 111111
