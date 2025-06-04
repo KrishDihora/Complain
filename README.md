@@ -4,3 +4,7 @@ The aim was to created an app as part of the VVP hackathon that allows users to 
 Built using Java with Firebase Realtime Database integration for handling complaint report data and Firebase Authentication for login system. 
 
 The first version of this application has also been released - feel free to check it out.
+
+Sign In credentials are below:
+  MobileNumber: 99999 99991
+  VerificationCode: 111111
