@@ -5,7 +5,7 @@ Built using Java with Firebase Realtime Database integration for handling compla
 
 The first version of this application has also been released - feel free to check it out.
 
-# User Credentials
+## User Credentials
 MobileNumber: 99999 99991 &emsp; VerificationCode: 111111<br>
 MobileNumber: 99999 99992 &emsp; VerificationCode: 222222<br>
 MobileNumber: 99999 99993 &emsp; VerificationCode: 333333<br>
