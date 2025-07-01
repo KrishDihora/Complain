@@ -6,15 +6,14 @@ Built using Java with Firebase Realtime Database integration for handling compla
 The first version of this application has also been released - feel free to check it out.
 
 # User Credentials
-```
-MobileNumber: 99999 99991  VerificationCode: 111111
-MobileNumber: 99999 99992  VerificationCode: 222222
-MobileNumber: 99999 99993  VerificationCode: 333333
-MobileNumber: 99999 99994  VerificationCode: 444444
-MobileNumber: 99999 99995  VerificationCode: 555555
-MobileNumber: 99999 99996  VerificationCode: 666666
-MobileNumber: 99999 99997  VerificationCode: 777777
-MobileNumber: 99999 99998  VerificationCode: 888888
-MobileNumber: 99999 99999  VerificationCode: 999999
+MobileNumber: 99999 99991  VerificationCode: 111111<br>
+MobileNumber: 99999 99992  VerificationCode: 222222<br>
+MobileNumber: 99999 99993  VerificationCode: 333333<br>
+MobileNumber: 99999 99994  VerificationCode: 444444<br>
+MobileNumber: 99999 99995  VerificationCode: 555555<br>
+MobileNumber: 99999 99996  VerificationCode: 666666<br>
+MobileNumber: 99999 99997  VerificationCode: 777777<br>
+MobileNumber: 99999 99998  VerificationCode: 888888<br>
+MobileNumber: 99999 99999  VerificationCode: 999999<br>
 MobileNumber: 99999 99910  VerificationCode: 101010
-````
+
