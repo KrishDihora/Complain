@@ -9,7 +9,7 @@ The first version of this application has also been released - feel free to chec
 <p align="center">
   <img src="mockup/login_screen.jpg" width="250" height="550"/> &emsp;
   <img src="mockup/home_screen.jpg" width="250" height="550"/> &emsp;
-  <img src="mockup/complain_screen.jpg" width="250" height="550"/> 
+  <img src="mockup/complain_screen.jpg" width="250" height="550"/> <br>
   <img src="mockup/complain_status_screen.jpg" width="250" height="550"/> &emsp;
   <img src="mockup/helpline_screen.jpg" width="250" height="550"/>
 </p>
