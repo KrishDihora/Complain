@@ -5,6 +5,15 @@ Built using Java with Firebase Realtime Database integration for handling compla
 
 The first version of this application has also been released - feel free to check it out.
 
+## Mockups
+<p align="center">
+  <img src="mockup/login_screen.jpeg" width="250" height="550"/> &emsp;
+  <img src="mockup/home_screen.jpeg" width="250" height="550"/> &emsp;
+  <img src="mockup/complain_screen.jpeg" width="250" height="550"/> 
+  <img src="mockup/complain_status_screen.jpeg" width="250" height="550"/> &emsp;
+  <img src="mockup/helpline_screen.jpeg" width="250" height="550"/>
+</p>
+
 ## User Credentials
 MobileNumber: 99999 99991 &emsp; VerificationCode: 111111<br>
 MobileNumber: 99999 99992 &emsp; VerificationCode: 222222<br>
