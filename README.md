@@ -7,11 +7,11 @@ The first version of this application has also been released - feel free to chec
 
 ## Mockups
 <p align="center">
-  <img src="mockup/login_screen.jpeg" width="250" height="550"/> &emsp;
-  <img src="mockup/home_screen.jpeg" width="250" height="550"/> &emsp;
-  <img src="mockup/complain_screen.jpeg" width="250" height="550"/> 
-  <img src="mockup/complain_status_screen.jpeg" width="250" height="550"/> &emsp;
-  <img src="mockup/helpline_screen.jpeg" width="250" height="550"/>
+  <img src="mockup/login_screen.jpg" width="250" height="550"/> &emsp;
+  <img src="mockup/home_screen.jpg" width="250" height="550"/> &emsp;
+  <img src="mockup/complain_screen.jpg" width="250" height="550"/> 
+  <img src="mockup/complain_status_screen.jpg" width="250" height="550"/> &emsp;
+  <img src="mockup/helpline_screen.jpg" width="250" height="550"/>
 </p>
 
 ## User Credentials
